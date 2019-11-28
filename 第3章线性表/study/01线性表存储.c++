@@ -72,6 +72,7 @@ Status ListInsert(SqList * L, int pos, ElemType e)
 		puts("线性表已满");
 		return  ERROR;
 	}
+
 	if(pos<1 || pos>L->length+1)
 	{
 		return ERROR;
@@ -79,11 +80,15 @@ Status ListInsert(SqList * L, int pos, ElemType e)
 	if( pos<=L->length )
 	{
 		for (int pos = L->length-1; pos >= pos-1; --pos)
+
+
 		{
 			L->data[pos+1] = L->data[pos];
 		}
 	}
+
 	L->data[pos-1] = e;
+
 	L->length++;
 	return OK;
 }
